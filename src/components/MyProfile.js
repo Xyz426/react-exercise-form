@@ -4,10 +4,10 @@ import '../style/myProfile.css'
 
 class MyProfile extends Component {
   state = {
-    name: 'Your name',
+    name: '',
     gender: '',
-    description: 'description',
-    tick: 'false',
+    description: '',
+    tick: false,
   }
 
   handleOnChange = (field,event) => {
@@ -30,11 +30,12 @@ class MyProfile extends Component {
   render() {    
     return (
       <form id='myprofile' onSubmit ={this.handleOnSubmit}>
+          <h1>My Profile</h1>
           <h3>
             <label htmlFor="name">Name</label>
           </h3>
 
-          <input id = 'name' type = 'text' value = {this.state.name} onChange={() => this.handleOnChange("name",event)} id= 'name'/>
+          <input id = 'name' type = 'text' placeholder='your name' value = {this.state.name} onChange={() => this.handleOnChange("name",event)} id= 'name'/>
 
           <h3>
             <label htmlFor="gender">Gender</label>
@@ -49,10 +50,10 @@ class MyProfile extends Component {
               Description      
             </h3>
           </p>
-          <textarea id='description'name='description' value={this.state.description} onChange={() => this.handleOnChange("description",event)}/>
+          <textarea id='description'name='description' placeholder='description' value={this.state.description} onChange={() => this.handleOnChange("description",event)}/>
 
           <div>
-            <input type = 'checkbox' value={this.state.checked} onChange={this.handleOncheck} id='tick'/>
+            <input type = 'checkbox' value={this.state.tick} onChange={this.handleOncheck} id='tick'/>
             I hava read the terms of conduct
           </div>
 
